@@ -1,0 +1,24 @@
+Header: Selenide Repository Testing on Github
+Severity: normal
+Preconditions: open page https://github.com/
+
+Steps:
+1. Enter "selenide/selenide" to search input on main page;
+2. Click 1st link from repository list;
+3. Click Wiki tab on Selenide repository page;
+4. Click "Soft Assertions" link;
+
+Expected Result: section contains code about JUnit5 implementation of soft assertions
+
+######################
+Header:
+Severity:normal
+Preconditions: none
+
+Steps:
+1. Move mouse cursor to block A;
+2. Click and hold mouse button on block A;
+3. Move to block B;
+4. Release mouse button;
+
+Expected Result: block A swaps with block B
