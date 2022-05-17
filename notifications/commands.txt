@@ -1,8 +1,8 @@
 
 curl -X POST \
    -H 'Content-Type: application/json' \
-   -d '{"chat_id": "-674701579", "text": "hihihi!!!", "disable_notification": true}' \
-   https://api.telegram.org/bot5368122527:AAHmpirIEVV52sCA1RFzDrOb9ogZ_8n9vY0/sendMessage
+   -d '{"chat_id": "123456", "text": "hihihi!!!", "disable_notification": true}' \
+   https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage
 
 
    java \

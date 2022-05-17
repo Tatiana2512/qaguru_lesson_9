@@ -38,6 +38,14 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+task ui_test
+
+
+task action_test
+
+
+task
+
 
 test {
     useJUnitPlatform()

@@ -1,9 +1,11 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.*;
 
+@Tag("ui_test")
 public class SelenideGithubTest {
 
     @BeforeAll
