@@ -1,9 +1,14 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Step;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.*;
+
+import static io.qameta.allure.Allure.step;
 
 @Tag("ui")
 public class SelenideGithubTest {
@@ -31,12 +36,28 @@ public class SelenideGithubTest {
     @Test
     public void selenideTestJUnit() {
 
-        start.openPage();
-        start.openRepoList("selenide/selenide");
-        list.getExactRepo("selenide/selenide");
-        selenide.getWiki();
-        wiki.getSoftAssertions();
-        soft.seachJUnit5Code();
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
+        step("Open Github main page", () -> {
+            start.openPage();
+        });
+
+        step("Search for repo by text", () -> {
+            start.openRepoList("selenide/selenide");
+        });
+
+        step("Click on repo link", () -> {
+            list.getExactRepo("selenide/selenide");
+        });
+        step("Open wiki tab", () -> {
+            selenide.getWiki();
+        });
+        step("Click Soft assertions link", () -> {
+            wiki.getSoftAssertions();
+        });
+        step("Check if page has JUnit5 result", () -> {
+            soft.seachJUnit5Code();
+        });
 
     }
 
