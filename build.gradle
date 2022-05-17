@@ -11,7 +11,7 @@ repositories {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             'org.junit.jupiter:junit-jupiter:5.8.2',
             'com.codeborne:selenide:6.3.5',
             'org.assertj:assertj-core:3.22.0',
@@ -38,13 +38,21 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-task ui_test
+
+task ui_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "ui"
+        excludeTags "action"
+    }
+}
 
 
-task action_test
-
-
-task
+task action_test(type: Test) {
+    useJUnitPlatform {
+        includeTags "action"
+        excludeTags "ui"
+    }
+}
 
 
 test {

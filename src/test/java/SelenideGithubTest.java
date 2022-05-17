@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.*;
 
-@Tag("ui_test")
+@Tag("ui")
 public class SelenideGithubTest {
 
     @BeforeAll

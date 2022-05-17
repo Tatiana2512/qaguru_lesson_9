@@ -10,7 +10,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-@Tag("action_test")
+@Tag("action")
 public class ActionsTest {
 
     SelenideElement a = $("#column-a");
